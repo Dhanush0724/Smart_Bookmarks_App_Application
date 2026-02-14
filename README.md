@@ -4,17 +4,25 @@
 
 **Project:** Smart Bookmarks App  
 **Stack:** Next.js 14 (App Router) · TypeScript · Supabase · Tailwind CSS  
-**Feature:** Real-time bookmark synchronization across browser tabs  
-**Status:** ✅ Resolved  
+**Live Vercel Link:** https://smart-bookmarks-app-dhanush.vercel.app/
 
 ---
 
-## 🎯 Requirement
+## Problem run into
 
-When a bookmark is added in one browser tab, it should instantly appear in other open tabs — without refreshing the page.
+When a bookmark is added in one browser tab or the same, it should instantly appear in other open tabs or same tab — without refreshing the page.
 
 ---
+## Honest take intitally what all ways I tried to solve it 
 
+when realtime is not working , I researched what's the issue I need to create a publication record in table for supabase which is new to me after going through documentations, videos I created the table and added realtime publication in supabase Thought it was solved but then same error which was not solved
+
+Then i went to debugging stage add all console log in every block payload status subscribed status and found payload was not appering after adding bookmarks Then there i found root cause used Tool and gave the problem and the apporach then i got to know users_id filters blocking it , after removing that publicaiton came to console statements after all fix the backend logs were correct but the UI was not updating after these fixes
+
+After analysis react was not re rendering properly with Server Action revalidation overwriting Realtime state Then fix taken on Once the first Realtime event
+fires, block subsequent initialBookmarks syncs from the server re-render
+
+So i did 4 fixes to solves this one problem , it's was good experience and learning 
 # 🚨 Problem Statement
 
 After implementing Supabase Realtime (Postgres Changes), the subscription showed `SUBSCRIBED` status — but:
