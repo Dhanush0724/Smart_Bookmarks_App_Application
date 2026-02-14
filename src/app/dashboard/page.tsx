@@ -38,8 +38,11 @@ export default async function DashboardPage() {
               </svg>
             </div>
             <span className="text-sm font-semibold text-gray-900">
-              Smart Bookmarks
+              Smart Bookmarks 
             </span>
+            <p className="text-xs text-gray-500">
+  Save now. Visit later.
+</p>
           </div>
 
           <div className="flex items-center gap-4">
