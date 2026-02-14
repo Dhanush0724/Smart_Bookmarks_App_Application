@@ -19,11 +19,12 @@ when realtime is not working , I researched what's the issue I need to create a 
 
 Then i went to debugging stage add all console log in every block payload status subscribed status and found payload was not appering after adding bookmarks Then there i found root cause used Tool and gave the problem and the apporach then i got to know users_id filters blocking it , after removing that publicaiton came to console statements after all fix the backend logs were correct but the UI was not updating after these fixes
 
-After analysis react was not re rendering properly with Server Action revalidation overwriting Realtime state Then fix taken on Once the first Realtime event
+After analysis ui was not re rendering properly with Server Action revalidation overwriting Realtime state Then fix taken on Once the first Realtime event
 fires, block subsequent initialBookmarks syncs from the server re-render
 
 So i did 4 fixes to solves this one problem , it's was good experience and learning 
-# 🚨 Problem Statement
+
+# Problem Statement below are detailed way to see problem and code snippets and how i solved it
 
 After implementing Supabase Realtime (Postgres Changes), the subscription showed `SUBSCRIBED` status — but:
 
